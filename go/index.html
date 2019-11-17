@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Go to safelinked page.">
+    <title>Safelink Go</title>    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!--<![endif]-->    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="../css/layouts/pure-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="../css/layouts/pure.css">
+    <!--<![endif]-->
+    <script>
+        var _0x47a6=['split','reverse'];(function(_0x3f44a4,_0x5a50e4){var _0x45891e=function(_0x26f3e3){while(--_0x26f3e3){_0x3f44a4['push'](_0x3f44a4['shift']());}};_0x45891e(++_0x5a50e4);}(_0x47a6,0x14e));var _0xf9de=function(_0x23a4c4,_0x5736c9){_0x23a4c4=_0x23a4c4-0x0;var _0x1a8f88=_0x47a6[_0x23a4c4];return _0x1a8f88;};function refactor(_0x50bb59){var _0x466454=_0x50bb59[_0xf9de('0x0')]('');var _0x332aa9=_0x466454[_0xf9de('0x1')]();var _0x51ca26=_0x332aa9['join']('');return _0x51ca26;}
+        function parse_query_string(e){for(var o=e.replace("?","").split("&"),n={},t=0;t<o.length;t++){var d=o[t].split("="),p=decodeURIComponent(d[0]),r=decodeURIComponent(d[1]);if(void 0===n[p])n[p]=decodeURIComponent(r);else if("string"==typeof n[p]){var i=[n[p],decodeURIComponent(r)];n[p]=i}else n[p].push(decodeURIComponent(r))}return n}
+        function removeParam(i,n){var t=n.split("?")[0],e=[],l=-1!==n.indexOf("?")?n.split("?")[1]:"";if(""!==l){for(var r=(e=l.split("&")).length-1;0<=r;r-=1)e[r].split("=")[0]===i&&e.splice(r,1);0<e.length?t=t+"?"+e.join("&"):t+=e.join("&")}return t}
+        var link = refactor(parse_query_string(window.location.search)['safelink']);
+        var newurl = removeParam("safelink",window.location.href); newurl = newurl.replace(window.location.origin,'');
+        window.history.replaceState({}, document.title, newurl);
+    </script>
+    <style>.btn-safelink{background-color:#4CAF50;border:none;color:#fff;padding:10px 20px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;-webkit-transition-duration:.4s;transition-duration:.4s;cursor:pointer}.btn-hoverable{background-color:#fff;color:#000;border:2px solid #4CAF50}.btn-hoverable:hover{background-color:#4CAF50;color:#fff}</style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="">Safelink Generator</a>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <h2 class="content-head is-center">Free Safelink Generator</h2>
+        
+            <div class="pure-g">
+                <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                    <h4>Link Protection</h4>
+                    <p>
+                        Safelink Generator will protect your link from automatic system like internet bot,
+                        crawler and scrapper. Don't make them easy to steal your property through internet.
+                    </p>
+        
+                    <h4>How to use safelink?</h4>
+                    <p>
+                        <ol>
+                            <li>Generate Safelink.</li>
+                            <li>You will have encrypted link.</li>
+                            <li>Share it into your website.</li>
+                            <li>Done.</li>
+                        </ol>
+                    </p>
+
+                    <h4>How it's work?</h4>
+                    <p>
+                        <ol>
+                            <li>Your visitor access to encrypted link.</li>
+                            <li>Our service will check your visitor is human or not.</li>
+                            <li>Your visitor will challenge to click the button twice.</li>
+                            <li>Your visitor will redirecting into your real link.</li>
+                        </ol>
+                    </p>
+                </div>
+
+                <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                    <div id="safelinker1"></div>
+                    <form class="pure-form pure-form-stacked">
+                        <fieldset>
+        
+                            <label for="url">URL</label>
+                            <input id="url" class="pure-input-1" type="text" placeholder="https://yourwebsite.com/link">
+        
+                            <label for="result">Result</label>
+                            <textarea id="result" class="pure-input-1" type="text" placeholder=""></textarea>
+        
+                            <button id="generate" type="button" class="pure-button">Generate Safelink</button>
+                        </fieldset>
+                    </form>
+                    <div id="safelinker2"></div>
+                </div>
+            </div>
+        
+        </div>
+            
+        <div class="content">
+            <h2 class="content-head is-center">Our Features.</h2>
+
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-check-square-o"></i>
+                        Free Forever
+                    </h3>
+                    <p>
+                        Our service is free and will be always free forever. We will display some ads but it will not going to disturb you.
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-check-square-o"></i>
+                        Permanent link
+                    </h3>
+                    <p>
+                        We always keep your link as forever as permanent link. We do not delete them.
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-check-square-o"></i>
+                        Adblocker Protection
+                    </h3>
+                    <p>
+                        We have adblocker protection, so you will not lose your benefit if your link is for making money.
+                    </p>
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">
+                        <i class="fa fa-check-square-o"></i>
+                        Tracker Protection
+                    </h3>
+                    <p>
+                        We don't track your link. So your link will be always secret and safe.  
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon l-box-lrg pure-g">
+            <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+                <img width="300" alt="File Icons" class="pure-img-responsive" src="../img/common/file-icons.png">
+            </div>
+            <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+                <h2 class="content-head content-head-ribbon">Internet is Fragile</h2>
+                <p>
+                    Sharing is caring, but the internet is fragile. Some of them has been doing wrong, they can steal everything from your website.
+                    So you have to use our safelink to make sure your property always safe from automatic system like internet bot, crawler and scrapper.
+                </p>
+            </div>
+        </div>
+
+        <div class="content"></div>
+        <div class="footer l-box is-center">
+            <a href="#">About</a> | <a href="#">Contact</a> | <a href="#">Privacy</a> | <a href="#">Disclaimer</a>
+            <br>
+            Copyright @ 2019 Safelink. All rights reserved.
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#safelinker1').Safelink({
+                encoded:link,
+                timer:true,
+                firstButtonText:'Click Here First >>',
+                secondButtonText:'Continue to Get Link >>'
+            }).build('#safelinker2','btn-safelink btn-hoverable');
+          });
+    </script>
+</body>
+</html>
