@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a responsive product landing page.">
-    <title>Safelink Generator</title>    
+    <meta name="description" content="Safelinker is a Safelink Generator that will protect your link from automatic system like internet bot, crawler and scrapper.">
+    <title>Safelink Generator - Safelinker</title>    
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     
     <!--[if lte IE 8]>
@@ -17,17 +17,17 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     
         <!--[if lte IE 8]>
-            <link rel="stylesheet" href="css/layouts/pure-old-ie.css">
+            <link rel="stylesheet" href="css/layouts/pure-old-ie.min.css">
         <![endif]-->
         <!--[if gt IE 8]><!-->
-            <link rel="stylesheet" href="css/layouts/pure.css">
+            <link rel="stylesheet" href="css/layouts/pure.min.css">
         <!--<![endif]-->
 </head>
 <body>
 
     <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="/">Safelink Generator</a>
+            <a class="pure-menu-heading" href="/">Safelinker</a>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
                 <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
                     <h4>Link Protection</h4>
                     <p>
-                        Safelink Generator will protect your link from automatic system like internet bot,
+                        Safelinker is a Safelink Generator that will protect your link from automatic system like internet bot,
                         crawler and scrapper. Don't make them easy to steal your property through internet.
                     </p>
         
@@ -140,7 +140,7 @@
 
         <div class="content"></div>
         <div class="footer l-box is-center">
-            <a href="#">About</a> | <a href="#">Contact</a> | <a href="#">Privacy</a> | <a href="#">Disclaimer</a>
+                <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy</a> | <a href="disclaimer.html">Disclaimer</a>
             <br>
             Copyright @ 2019 Safelink. All rights reserved.
         </div>
@@ -148,13 +148,13 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.0.0/src/safelink.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
     <script src="js/app.js"></script>
     <script>
         $(document).ready(function(){
             $('#generate').on('click', function(){
                 var link = encodeURIComponent(refactor($('#safelinker1').Safelink().encode($('#url').val())));
-                $('#result').val(window.location.href+'go?safelink='+link).select();
+                $('#result').val(window.location.href+'go?to='+link).select();
                 document.execCommand('copy');
             });
             $('#result').on('click', function(){
