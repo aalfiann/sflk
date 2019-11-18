@@ -159,7 +159,7 @@
             url: {
                 required: true,
                 message: '* URL is not valid!',
-                regex: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+                regex: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
                 errorPlace:'url-error'
             }
         });
@@ -177,7 +177,7 @@
                 $('#result').val('');
                 $('#url').val('').focus();
             });
-            $('#url').on('keyup', function() {
+            $('#url').on('blur', function() {
                 FV.element('url').validate();
             });
         });
