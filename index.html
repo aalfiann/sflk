@@ -149,17 +149,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/text-obfuscator@1.0.0/src/text-obfuscator.min.js"></script>
     <script>
         $(document).ready(function(){
             $('#generate').on('click', function(){
-                var link = encodeURIComponent(refactor($('#safelinker1').Safelink().encode($('#url').val())));
+                var link = encodeURIComponent(TextObfuscator.encode($('#safelinker1').Safelink().encode($('#url').val()),3));
                 $('#result').val(window.location.href+'go?to='+link).select();
-                document.execCommand('copy');
             });
             $('#result').on('click', function(){
                 $(this).select();
-                document.execCommand('copy');
             });
         });
     </script>

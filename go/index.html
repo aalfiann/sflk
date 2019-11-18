@@ -19,13 +19,13 @@
     <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="../css/layouts/pure.min.css">
     <!--<![endif]-->
+    <script src="https://cdn.jsdelivr.net/npm/text-obfuscator@1.0.0/src/text-obfuscator.min.js"></script>
     <script>
-        var _0x47a6=['split','reverse'];(function(_0x3f44a4,_0x5a50e4){var _0x45891e=function(_0x26f3e3){while(--_0x26f3e3){_0x3f44a4['push'](_0x3f44a4['shift']());}};_0x45891e(++_0x5a50e4);}(_0x47a6,0x14e));var _0xf9de=function(_0x23a4c4,_0x5736c9){_0x23a4c4=_0x23a4c4-0x0;var _0x1a8f88=_0x47a6[_0x23a4c4];return _0x1a8f88;};function refactor(_0x50bb59){var _0x466454=_0x50bb59[_0xf9de('0x0')]('');var _0x332aa9=_0x466454[_0xf9de('0x1')]();var _0x51ca26=_0x332aa9['join']('');return _0x51ca26;}
         function parse_query_string(e){for(var o=e.replace("?","").split("&"),n={},t=0;t<o.length;t++){var d=o[t].split("="),p=decodeURIComponent(d[0]),r=decodeURIComponent(d[1]);if(void 0===n[p])n[p]=decodeURIComponent(r);else if("string"==typeof n[p]){var i=[n[p],decodeURIComponent(r)];n[p]=i}else n[p].push(decodeURIComponent(r))}return n}
         function removeParam(i,n){var t=n.split("?")[0],e=[],l=-1!==n.indexOf("?")?n.split("?")[1]:"";if(""!==l){for(var r=(e=l.split("&")).length-1;0<=r;r-=1)e[r].split("=")[0]===i&&e.splice(r,1);0<e.length?t=t+"?"+e.join("&"):t+=e.join("&")}return t}
         var hash = parse_query_string(window.location.search)['to'];
         if(hash) {
-            var link = refactor(hash);    
+            var link = TextObfuscator.decode(hash,3);    
             var newurl = removeParam("to",window.location.href); newurl = newurl.replace(window.location.origin,'');
             window.history.replaceState({}, document.title, newurl);
         }
