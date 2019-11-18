@@ -243,6 +243,11 @@ a.pure-button-primary {
     width: 100%;
 }
 
+.footer-link {
+    text-decoration: none;
+    color:#7f8c8d;
+}
+
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
  * On tablets and other medium-sized devices, we want to customize some

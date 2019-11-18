@@ -139,9 +139,9 @@
 
         <div class="content"></div>
         <div class="footer l-box is-center">
-                <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy</a> | <a href="disclaimer.html">Disclaimer</a>
+                <a href="about.html" class="footer-link">About</a> | <a href="contact.html" class="footer-link">Contact</a> | <a href="privacy.html" class="footer-link">Privacy</a> | <a href="disclaimer.html" class="footer-link">Disclaimer</a>
             <br>
-            Copyright @ 2019 Safelink. All rights reserved.
+            Copyright @ <span id="copyrightyear"></span> Safelinker. All rights reserved.
         </div>
 
     </div>
@@ -150,6 +150,7 @@
     <script src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/text-obfuscator@1.0.0/src/text-obfuscator.min.js"></script>
     <script>
+        document.getElementById('copyrightyear').innerHTML= new Date().getFullYear();
         $(document).ready(function(){
             $('#generate').on('click', function(){
                 var link = encodeURIComponent(TextObfuscator.encode($('#safelinker1').Safelink().encode($('#url').val()),3));
