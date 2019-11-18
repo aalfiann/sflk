@@ -150,22 +150,22 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/native-form-validation@1.0.1/dist/formvalidation.min.js"></script>
     <script async src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
     <script async src="https://cdn.jsdelivr.net/npm/text-obfuscator@1.0.0/src/text-obfuscator.min.js"></script>
-    <script async src="https://cdn.jsdelivr.net/npm/native-form-validation@1.0.1/dist/formvalidation.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152874176-1"></script>
     <script>
+        var FV = new FormValidation();
+        FV.rules({
+            url: {
+                required: true,
+                message: '* URL is not valid!',
+                regex: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
+                errorPlace:'url-error'
+            }
+        });
         document.getElementById('copyrightyear').innerHTML= new Date().getFullYear();
         $(document).ready(function(){
-            var FV = new FormValidation();
-            FV.rules({
-                url: {
-                    required: true,
-                    message: '* URL is not valid!',
-                    regex: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
-                    errorPlace:'url-error'
-                }
-            });
             $('#generate').on('click', function(){
                 if(FV.validate().isValid()) {
                     var link = encodeURIComponent(TextObfuscator.encode($('#safelinker1').Safelink().encode($('#url').val()),3));
