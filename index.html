@@ -67,13 +67,15 @@
                     <form class="pure-form pure-form-stacked">
                         <fieldset>
         
+                            <span id="url-error" class="text-error"></span>
                             <label for="url">URL</label>
                             <input id="url" class="pure-input-1" type="text" placeholder="https://yourwebsite.com/link">
         
                             <label for="result">Result</label>
                             <textarea id="result" class="pure-input-1" type="text" placeholder=""></textarea>
         
-                            <button id="generate" type="button" class="pure-button">Generate Safelink</button>
+                            <button id="generate" type="button" class="button-secondary pure-button">Generate Safelink</button>
+                            <button id="reset" type="button" class="pure-button">Reset</button>
                         </fieldset>
                     </form>
                 </div>
@@ -149,15 +151,34 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/text-obfuscator@1.0.0/src/text-obfuscator.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/native-form-validation@1.0.1/dist/formvalidation.min.js"></script>
     <script>
         document.getElementById('copyrightyear').innerHTML= new Date().getFullYear();
+        var FV = new FormValidation();
+        FV.rules({
+            url: {
+                required: true,
+                message: '* URL is not valid!',
+                regex: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+                errorPlace:'url-error'
+            }
+        });
         $(document).ready(function(){
             $('#generate').on('click', function(){
-                var link = encodeURIComponent(TextObfuscator.encode($('#safelinker1').Safelink().encode($('#url').val()),3));
-                $('#result').val(window.location.href+'go?to='+link).select();
+                if(FV.validate().isValid()) {
+                    var link = encodeURIComponent(TextObfuscator.encode($('#safelinker1').Safelink().encode($('#url').val()),3));
+                    $('#result').val(window.location.href+'go?to='+link).select();
+                }
             });
             $('#result').on('click', function(){
                 $(this).select();
+            });
+            $('#reset').on('click', function(){
+                $('#result').val('');
+                $('#url').val('').focus();
+            });
+            $('#url').on('keyup', function() {
+                FV.element('url').validate();
             });
         });
     </script>
