@@ -135,7 +135,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
+    <script async="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152874176-1"></script>
     <script>
         document.getElementById('copyrightyear').innerHTML= new Date().getFullYear();
         $(document).ready(function(){
@@ -145,7 +146,11 @@
                 firstButtonText:'Get Link Here >>',
                 secondButtonText:'Continue to Link >>'
             }).build('#safelinker2','btn-safelink btn-hoverable');
-          });
+        });
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-152874176-1');
     </script>
 </body>
 </html>
