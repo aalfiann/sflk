@@ -170,6 +170,8 @@
                 if(FV.validate().isValid()) {
                     var link = encodeURIComponent(TextObfuscator.encode($('#safelinker1').Safelink().encode($('#url').val()),3));
                     $('#result').val(window.location.href+'go?to='+link).select();
+                } else {
+                    $('#url').focus();    
                 }
             });
             $('#result').on('click', function(){
