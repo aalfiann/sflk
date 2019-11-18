@@ -156,16 +156,16 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152874176-1"></script>
     <script>
         document.getElementById('copyrightyear').innerHTML= new Date().getFullYear();
-        var FV = new FormValidation();
-        FV.rules({
-            url: {
-                required: true,
-                message: '* URL is not valid!',
-                regex: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
-                errorPlace:'url-error'
-            }
-        });
         $(document).ready(function(){
+            var FV = new FormValidation();
+            FV.rules({
+                url: {
+                    required: true,
+                    message: '* URL is not valid!',
+                    regex: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
+                    errorPlace:'url-error'
+                }
+            });
             $('#generate').on('click', function(){
                 if(FV.validate().isValid()) {
                     var link = encodeURIComponent(TextObfuscator.encode($('#safelinker1').Safelink().encode($('#url').val()),3));
