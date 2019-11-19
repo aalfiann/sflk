@@ -21,7 +21,7 @@
     <!--<![endif]-->
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/text-obfuscator@1.0.0/src/text-obfuscator.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/text-obfuscator@1.0.2/dist/text-obfuscator.min.js"></script>
     <script>
         function parse_query_string(e){for(var o=e.replace("?","").split("&"),n={},t=0;t<o.length;t++){var d=o[t].split("="),p=decodeURIComponent(d[0]),r=decodeURIComponent(d[1]);if(void 0===n[p])n[p]=decodeURIComponent(r);else if("string"==typeof n[p]){var i=[n[p],decodeURIComponent(r)];n[p]=i}else n[p].push(decodeURIComponent(r))}return n}
         function removeParam(i,n){var t=n.split("?")[0],e=[],l=-1!==n.indexOf("?")?n.split("?")[1]:"";if(""!==l){for(var r=(e=l.split("&")).length-1;0<=r;r-=1)e[r].split("=")[0]===i&&e.splice(r,1);0<e.length?t=t+"?"+e.join("&"):t+=e.join("&")}return t}
