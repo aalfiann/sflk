@@ -48,6 +48,7 @@
         
             <div class="pure-g">
                 <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                    <p id="uwow" style="display:none;"><b>Please disable adblock to continue this process.</b></p>
                     <div id="safelinker1"></div>
                     <iframe src="https://imgfo.com/featured-box-embed.html" width="300px" height="250px" frameborder="0" scrolling="no"></iframe>
                     <iframe src="https://imgfo.com/featured-box-embed.html" width="300px" height="250px" frameborder="0" scrolling="no"></iframe>
@@ -138,21 +139,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/safelink-jquery@1.1.0/src/safelink.min.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152874176-1"></script>
+    <script src="../js/ad-blocker.js"></script>
     <script>
         document.getElementById('copyrightyear').innerHTML= new Date().getFullYear();
         $(document).ready(function(){
-            $('#safelinker1').Safelink({
-                encoded:link,
-                timer:true,
-                firstButtonText:'Get Link Here >>',
-                secondButtonText:'Continue to Link >>'
-            }).build('#safelinker2','btn-safelink btn-hoverable');
+            if(document.getElementById('aiueo')) {
+                $('#safelinker1').Safelink({
+                    encoded:link,
+                    timer:true,
+                    firstButtonText:'Get Link Here >>',
+                    secondButtonText:'Continue to Link >>'
+                }).build('#safelinker2','btn-safelink btn-hoverable');
+            } else {
+                document.getElementById('uwow').style.display = 'inline';
+            }
         });
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-152874176-1');
     </script>
 </body>
 </html>
