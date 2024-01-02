@@ -37,17 +37,23 @@
             <div class="pure-g">
                 <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
                     <p>
-                        Safelinker for current time is maintain by single person.<br>
+                        Safelinker for the current time is maintain by single person.<br>
+                        Since this service is free, there is no support to you.<br>
                         For any kind help or futher information, just feel free to contact us.
                     </p>
                     <p>
                         <b>Contact Person:</b><br>
-                        <b>Name:</b> M ABD AZIZ ALFIAN<br>
+                        <b>Name:</b> M Abd Aziz Alfian<br>
                         <b>Email:</b> aalfiann@gmail.com
                     </p>
                     <p>
                         Thank You.
                     </p>
+                    <hr>
+                    <h3>Donations</h3>
+                    <p>We accept donation with cryptocurrency XEC eCash</p>
+                    <div id="xec_button"></div>
+
                 </div>
                 <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
                     <iframe src="//a.magsrv.com/iframe.php?idzone=5165636&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
@@ -68,5 +74,16 @@
         </div>
 
     </div>
+    <script src="https://unpkg.com/@paybutton/paybutton/dist/paybutton.js"></script>
+    <script>
+        var config = {
+            to: 'ecash:qqcn5j6ej57xngsscn7ugm80un4jujk72qypcm8gyl',
+            text: 'Donate with XEC',
+            hoverText: 'Send XEC',
+            successText: 'Thanks for your support!'
+        };
+
+        PayButton.render(document.getElementById('xec_button'), config);
+    </script>
 </body>
 </html>
